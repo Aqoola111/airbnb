@@ -9,7 +9,6 @@ export default function Home() {
 			<h1>
 				Welcome airdnd to Next.js!
 			</h1>
-			{sessions && JSON.stringify(sessions.data, null, 2)}
 		</div>
 	);
 }
