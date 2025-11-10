@@ -113,6 +113,13 @@
     --sidebar-ring: oklch(0.41 0.159 10.272);
 }
 
+.leaflet-bottom,
+.leaflet-control,
+.leaflet-pane,
+.leaflet-top {
+    z-index: 0 !important;
+}
+
 
 @layer base {
     * {

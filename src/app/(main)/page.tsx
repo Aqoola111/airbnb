@@ -1,14 +1,17 @@
-'use client'
-import {trpc} from "@/trpc/client";
-import Image from "next/image";
+import ListingsClient from "@/features/listings/listings-client";
+import Listings from "@/features/listings/listings-client";
+import {getQueryClient, HydrateClient, trpc} from "@/trpc/server";
+import {HydrationBoundary} from "@tanstack/react-query";
 
-export default function Home() {
-	const sessions = trpc.getSessionInfo.useQuery()
+const Page = async () => {
+	const queryClient = getQueryClient();
+	const listings = trpc.getListings.prefetch()
 	return (
-		<div>
-			<h1>
-				Welcome airdnd to Next.js!
-			</h1>
-		</div>
-	);
+		<HydrateClient>
+			<div className='max-w-[1440px] mx-auto w-full mt-4 md:mt-8 lg:mt-16'>
+				<ListingsClient/>
+			</div>
+		</HydrateClient>
+	)
 }
+export default Page

@@ -10,9 +10,9 @@ const Navbar = () => {
 	const isMobile = useIsMobile()
 	return (
 		<div className='h-16 border-b'>
-			<div className='max-w-[2000px] mx-auto flex items-center h-full'>
+			<div className='max-w-[1440px] mx-auto flex items-center h-full'>
 				<div
-					className='w-full flex items-center lg:justify-between gap-6 h-full px-4 xl:pl-20 lg:px-14 md:px-8'>
+					className='w-full flex items-center  lg:justify-between gap-6 h-full px-4 xl:pl-20 lg:px-14 md:px-8'>
 					<Logo onlyIcon={isMobile}/>
 					<FilterButton/>
 					<div className='flex items-center gap-2'>
